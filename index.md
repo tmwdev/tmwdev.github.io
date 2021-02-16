@@ -5,7 +5,7 @@
 ### Sample Projects
 
 [Upper Respiratory Virtual Lab](projectPages/urvl/main)
-<img src="projectPages/urvl/img_map_thumb?raw=true"/>
+<img src="projectPages/urvl/img_map_thumb.png?raw=true"/>
 
 ---
 [Dentistry ProConsult](/projectPages/dentistryPro/main)
