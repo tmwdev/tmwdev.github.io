@@ -5,14 +5,25 @@
 ### Sample Projects
 
 [Upper Respiratory Virtual Lab](projectPages/urvl/main)
+
 <img src="projectPages/urvl/img_map_thumb.png?raw=true"/>
 
 ---
+
 [Dentistry ProConsult](/projectPages/dentistryPro/main)
+
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
+
 [Kinesiology ProConsult](http://example.com/)
+
+<img src="images/dummy_thumbnail.jpg?raw=true"/>
+
+---
+
+[smarTooth](http://example.com/)
+
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
