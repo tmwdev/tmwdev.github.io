@@ -2,7 +2,7 @@
 
 **Project description:** This is an Adventure/Puzzle platforming game that I'm working on in my spare time.  The primary goal is to create a game that captures many of the gameplay elements I enjoyed growing up, yet combines them in a way that is novel and interesting.  The secondary goal is to make a game that is fun to play across multiple platforms, including mobile devices.
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/NU0tc5cHtno" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NU0tc5cHtno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### 1. Suggest hypotheses about the causes of observed phenomena
 
