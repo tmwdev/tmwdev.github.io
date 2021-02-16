@@ -2,9 +2,10 @@
 
 A common issue in games is dealing with objects that need to be repeatedly created and destroyed (e.g. enemies, bullets, etc). Since creating and destroying objects is expensive, I'm using object pools to store deactivated instances of these objects, and activating/deactivating them as necessary.
 
+**Pool Manager**
+
 I wanted the pooling system to be as simple to use as possible. For this reason, I have a singleton "manager" class that keeps track of all the pools. The manager stores the pools in a Dictionary, with the object prefab acting as the key. This way, any class that needs to use a pool only needs to know the "type" of object it will be using. To further simplify (and safeguard) the pool usage, I've also set up the manager class to automatically create new pools whenever a new object is requested.
 
-**Pool Manager**
 {% highlight csharp %}
 
 /* =================================================================================================
@@ -100,31 +101,108 @@ public class PoolManager : TWMonoBehaviour
 }
 {% endhighlight %}
 
+**Object Pool**
 
-### 1. Suggest hypotheses about the causes of observed phenomena
+Continuing with the theme of keeping the pool system as straightforward as possible, I designed the object pools themselves to automatically grow as needed.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+{% highlight csharp %}
+/* =================================================================================================
+ * Object pools are used to manage instances of objects that need to be repeatedly recycled.  We use
+ * a Queue to store each instance (deactivated) of the object.  When an instance is needed, we
+ * remove the first item from the queue, activate it, place it in the world, and then return the
+ * instance's reference to the class that requested it.  If the queue is empty, we create a new
+ * instance first.  This way, the pool will grow to whatever size is needed automatically.
+ * ===============================================================================================*/
 
-```javascript
-if (isAwesome){
-  return true
+public class ObjectPool
+{
+	private GameObject m_poolPrefab;
+	private Queue<GameObject> m_pool = new Queue<GameObject>();
+	private List<ObjectPoolHelper> m_poolHelpers = new List<ObjectPoolHelper>();
+	private Transform m_poolRoot;
+
+	//..............................................................................................
+	public ObjectPool (GameObject prefab, int initialSize, Transform poolRoot)
+	{
+		m_poolPrefab = prefab;
+		m_poolRoot = poolRoot;
+
+		for (int i = 0; i < initialSize; i++) {
+			AddObjectToPool();
+		}
+	}
+
+	//..............................................................................................
+	private void AddObjectToPool()
+	{
+		// instantiate and activate the object
+		GameObject newObject = MonoBehaviour.Instantiate(m_poolPrefab) as GameObject;
+		newObject.SetActive(false);
+
+		// set the object's parent to the "pool".  This isn't important for gameplay but it does
+		// help keep things organized
+		newObject.transform.SetParent(m_poolRoot);
+
+		// attach a "pool helper" to the object - this helper script allows the object to return to
+		// the pool and ensures no errors occur if one or both need to be destroyed
+		ObjectPoolHelper helper = newObject.AddComponent<ObjectPoolHelper>();
+		helper.SetPool(this);
+		m_poolHelpers.Add(helper);
+
+		// add the object to the pool
+		m_pool.Enqueue(newObject);
+	}
+
+	//..............................................................................................
+	public void BreakConnectionWithPool(ObjectPoolHelper helper)
+	{
+		m_poolHelpers.Remove(helper);
+	}
+
+	//..............................................................................................
+	public GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation)
+	{
+		GameObject pooledObject = null;
+
+		// for as long as objects exist in the pool, attempt to grab the first one as long as it
+		// isn't null (ie has been destroyed)
+		// if the end of the pool is reached, create a new object
+		while (m_pool.Count > 0 && !(pooledObject = m_pool.Dequeue())) {}
+		if (pooledObject == null && m_pool.Count == 0) {
+			AddObjectToPool();
+			pooledObject = m_pool.Dequeue();
+		}
+
+		// activate the object and set its position and rotation
+		pooledObject.SetActive(true);
+		pooledObject.transform.position = position;
+		pooledObject.transform.rotation = rotation;
+
+		// return a reference to the newly spawned object
+		return pooledObject;
+	}
+
+	//..............................................................................................
+	public void Despawn(GameObject gameObject, ObjectPoolHelper helper)
+	{
+		if (m_poolHelpers.Contains(helper)) {
+			gameObject.SetActive(false);
+			m_pool.Enqueue(gameObject);
+		} else {
+			MonoBehaviour.Destroy(gameObject);
+			throw new System.Exception("Attempting to add a non-pooled item to object pool.");
+		}
+	}
+
+	//..............................................................................................
+	public void EmptyPool()
+	{
+		foreach (ObjectPoolHelper helper in m_poolHelpers) {
+			MonoBehaviour.Destroy(helper.gameObject);
+		}
+	}
 }
-```
 
-### 2. Assess assumptions on which statistical inference will be based
+{% endhighlight %}
 
-```javascript
-if (isAwesome){
-  return true
-}
-```
 
-### 3. Support the selection of appropriate statistical tools and techniques
-
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
-### 4. Provide a basis for further data collection through surveys or experiments
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
