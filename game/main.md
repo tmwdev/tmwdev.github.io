@@ -2,17 +2,13 @@
 
 **Project description:** This is an Adventure/Puzzle platforming game that I'm working on in my spare time.  The primary goal is to create a game that captures many of the gameplay elements I enjoyed growing up, yet combines them in a way that is novel and interesting.  The secondary goal is to make a game that is fun to play across multiple platforms, including mobile devices.
 
+\***Note:** All graphics currently shown are placeholders and will be replaced in the final product.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NU0tc5cHtno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### 1. Suggest hypotheses about the causes of observed phenomena
+Here you can see the touch controls in action.  One thing I'm trying to do differently from most of the mobile platformers I've tried is incororating gestures and oversized buttons, to make the game easier to handle.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-
-```javascript
-if (isAwesome){
-  return true
-}
-```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ur-cxzar9uk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### 2. Assess assumptions on which statistical inference will be based
 
