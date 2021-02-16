@@ -26,13 +26,13 @@
 
 [Kinesiology ProConsult](/projectPages/otKinesiology/main)
 
-<img src="projectPages/otKinesiology/zoomed_thumb?raw=true"/>
+<img src="projectPages/otKinesiology/zoomed_thumb.png?raw=true"/>
 
 ---
 
 [smarTooth](/projectPages/smarTooth/main)
 
-<img src="iprojectPages/smarTooth/calc_thumb?raw=true"/>
+<img src="iprojectPages/smarTooth/calc_thumb.png?raw=true"/>
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
