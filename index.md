@@ -4,7 +4,7 @@
 
 ### Sample Projects
 
-[Upper Respiratory Virtual Lab](/projectPages/urvl/main)
+[Upper Respiratory Virtual Lab](projectPages/urvl/main)
 <img src="projectPages/urvl/img_map_thumb?raw=true"/>
 
 ---
