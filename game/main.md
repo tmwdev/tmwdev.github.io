@@ -14,4 +14,4 @@ Here you can see the touch controls in action.  One thing I'm trying to do diffe
 
 **Code Samples:**
 
-[Object Pooling](game/codeSamples/objectPool)
+[Object Pooling](codeSamples/objectPool)
