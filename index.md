@@ -2,17 +2,17 @@
 
 ---
 
-### Completed Projects
+### Sample Projects
 
-[Project 1 Title](/sample_page)
+[Upper Respiratory Virtual Lab](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Dentistry ProConsult](/pdf/sample_presentation.pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+[Kinesiology ProConsult](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
