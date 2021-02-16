@@ -6,7 +6,7 @@
 
 [Unnamed Cross-platform Platforming Game](game/main)
 
-<img src="projectPages/urvl/img_map_thumb.png?raw=true"/>
+<img src="game/images/gameplay_thumb.png?raw=true"/>
 
 ---
 
