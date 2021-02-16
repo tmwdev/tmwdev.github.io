@@ -2,7 +2,15 @@
 
 ---
 
-### Sample Projects
+### Current Projects
+
+[Unnamed Cross-platform Platforming Game](game/main)
+
+<img src="projectPages/urvl/img_map_thumb.png?raw=true"/>
+
+---
+
+### Past Projects
 
 [Upper Respiratory Virtual Lab](projectPages/urvl/main)
 
@@ -16,13 +24,13 @@
 
 ---
 
-[Kinesiology ProConsult](http://example.com/)
+[Kinesiology ProConsult](/projectPages/otKinesiology/main)
 
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
-[smarTooth](http://example.com/)
+[smarTooth](/projectPages/smarTooth/main)
 
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
