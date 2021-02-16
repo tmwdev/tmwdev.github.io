@@ -8,7 +8,7 @@
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Dentistry ProConsult](/pdf/sample_presentation.pdf)
+[Dentistry ProConsult](/projectPages/dentistryPro/main)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
