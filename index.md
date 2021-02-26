@@ -4,7 +4,7 @@
 
 ### Current Projects
 
-[Unnamed Cross-platform Platforming Game](game/main)
+[Adventure Puzzle Platforming Game](game/main)
 
 <img src="game/images/gameplay_thumb.png?raw=true"/>
 
