@@ -4,6 +4,17 @@
 
 \***Note:** All graphics currently shown are placeholders and will be replaced in the final product.
 
+<div style="position:relative;padding-bottom:56.25%;">
+  <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;"
+          frameborder="0"
+          width="100%"
+          height="100%" 
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          src="https://www.youtube.com/embed/NU0tc5cHtno">
+  </iframe>
+</div>
+
 <iframe width="85%" src="https://www.youtube.com/embed/NU0tc5cHtno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Here you can see the touch controls in action.  One thing I'm trying to do differently from most of the mobile platformers I've tried is incororating gestures and oversized buttons, to make the game easier to handle.
